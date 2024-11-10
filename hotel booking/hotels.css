@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f7;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    margin: 70px;
+    background-image: url(hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 1370px;
+    border-radius: 3%;
+    box-shadow: 10px 10px 10px #50696f;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.h-title {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+.hotel-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.hotel-card:hover {
+    transform: scale(1.02);
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-right: 2px solid #f4f4f4;
+}
+
+.info {
+    padding: 20px;
+    flex: 1;
+}
+
+.info h3 a {
+    color: #333;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.checked {
+    color: #ffb400;
+}
+
+.book {
+    margin-top: 20px;
+}
+
+.book-button {
+    text-decoration: none;
+    background-color: #f7941d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.book-button:hover {
+    background-color: #d98200;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}

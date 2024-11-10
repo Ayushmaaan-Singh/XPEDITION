@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="r-title">
+        <h1> SELECT AVAILABLE ROOMS</h1> 
+    </div>
+    <div class="rooms">
+
+        <form action="RoomBookingServlet" method="post">
+            <div class="room-section">
+                <div class="image1">
+                    <!-- Add image if available -->
+                </div>
+                <div class="info">
+                    <h2>ROOM FOR 2</h2>
+                    <input type="hidden" name="roomType" value="Room for 2">
+                </div>
+                <div class="price">
+                    <span>2000/day</span>
+                    <input type="hidden" name="price" value="2000">
+                </div>
+                <div class="amenities">
+                    <div class="a1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM254-346l-84-86q59-59 138.5-93.5T480-560q92 0 171.5 35T790-430l-84 84q-44-44-102-69t-124-25q-66 0-124 25t-102 69ZM84-516 0-600q92-94 215-147t265-53q142 0 265 53t215 147l-84 84q-77-77-178.5-120.5T480-680q-116 0-217.5 43.5T84-516Z"/></svg>
+                        Wi-Fi
+                    </div>
+                    <div class="a1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+TV
+                    </div>
+                    <div class="a1">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M80-200v-80h800v80H80Zm40-120v-40q0-128 78.5-226T400-710v-10q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720v10q124 26 202 124t78 226v40H120Zm82-80h556q-14-104-93-172t-185-68q-106 0-184.5 68T202-400Zm278 0Z"/></svg>
+                     Cleaning
+                    </div>
+                </div>
+                <div class="book">
+                    <button type="submit" class="book-b">CONFIRM</button>
+                </div>
+            </div>
+        </form>
+        
+
+        <!-- Room Section 2 -->
+        <div class="room-section">
+            <div class="image2">
+                <!-- Add an image here -->
+            </div>
+            <div class="info">
+                <h2> ROOM FOR 4</h2>
+            </div>
+            <div class="price">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+                    <path d="M547-144 288-408v-72h132q50 0 89-35.5t43-84.5H264v-72h274q-19-35-49.5-53.5T420-744H264v-72h432v72H576q13 17 23.5 33.5T615-672h81v72h-72q-5 81-64 136.5T420-408h-31l259 264H547Z"/>
+                </svg>
+                3500/day
+                </div>
+                <div class="amenities">
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM254-346l-84-86q59-59 138.5-93.5T480-560q92 0 171.5 35T790-430l-84 84q-44-44-102-69t-124-25q-66 0-124 25t-102 69ZM84-516 0-600q92-94 215-147t265-53q142 0 265 53t215 147l-84 84q-77-77-178.5-120.5T480-680q-116 0-217.5 43.5T84-516Z"/></svg>
+                    <p> Wi-Fi </p>
+                    </div>
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                    <p> T.V. </p>
+                    </div>
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M80-200v-80h800v80H80Zm40-120v-40q0-128 78.5-226T400-710v-10q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720v10q124 26 202 124t78 226v40H120Zm82-80h556q-14-104-93-172t-185-68q-106 0-184.5 68T202-400Zm278 0Z"/></svg>
+                    <p> Cleaning </p>
+                    </div>
+                    </div>
+                <div class="book">
+                    <button class="book-b"> CONFIRM </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Room Section 3 -->
+        <div class="room-section">
+            <div class="image3">
+                <!-- Add an image here -->
+            </div>
+            <div class="info">
+                <h2>DELUXE SUITE ROOM</h2>
+            </div>
+            <div class="price">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+                    <path d="M547-144 288-408v-72h132q50 0 89-35.5t43-84.5H264v-72h274q-19-35-49.5-53.5T420-744H264v-72h432v72H576q13 17 23.5 33.5T615-672h81v72h-72q-5 81-64 136.5T420-408h-31l259 264H547Z"/>
+                </svg>
+                2000/day
+                </div>
+                <div class="amenities">
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM254-346l-84-86q59-59 138.5-93.5T480-560q92 0 171.5 35T790-430l-84 84q-44-44-102-69t-124-25q-66 0-124 25t-102 69ZM84-516 0-600q92-94 215-147t265-53q142 0 265 53t215 147l-84 84q-77-77-178.5-120.5T480-680q-116 0-217.5 43.5T84-516Z"/></svg>
+                    <p> Wi-Fi </p>
+                    </div>
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                    <p> T.V. </p>
+                    </div>
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M80-200v-80h800v80H80Zm40-120v-40q0-128 78.5-226T400-710v-10q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720v10q124 26 202 124t78 226v40H120Zm82-80h556q-14-104-93-172t-185-68q-106 0-184.5 68T202-400Zm278 0Z"/></svg>
+                    <p> Cleaning </p>
+                    </div>
+                    <div class="a1"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-640v-120h80v120h-80Zm0 360v-200h80v200h-80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-360H240v360Zm0-440h480v-200H240v200Z"/></svg>
+                    <p> fridge </p>
+                    </div>
+                    </div>
+                <div class="book">
+                    <button class="book-b"> CONFIRM </button>
+                </div>
+        </div>
+    </div>
+    <script src="room.js"></script>
+</body>
+</html>

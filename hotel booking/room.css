@@ -1,0 +1,142 @@
+body {
+    background-color: #b4d6e0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+h1
+{
+    font-size: 70px;
+    color: #fff;
+}
+
+/* Rooms container */
+.rooms {
+    display: flex;
+    justify-content: space-around; /* Spacing between room sections */
+    align-items: flex-start;       /* Align items at the top */
+    flex-wrap: wrap;               /* Ensures the rooms wrap when screen size reduces */
+    padding: 20px;
+    width: 600px;
+}
+
+/* Title styling */
+.r-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Each room section */
+.room-section {
+    width: 490px;                    /* Width of each room section */
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 470px;
+}
+.amenities
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.amenities svg
+{
+    margin: 5px;
+    border-radius: 50%;
+}
+.a1
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px;
+}
+
+/* Image placeholder */
+.image1 {
+    height: 300px;
+    width: 500px;
+    background-image: url(2-bed.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+.image2 {
+    height: 300px;
+    width: 500px;
+    background-image: url(4-bed.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+.image3 {
+    height: 300px;
+    width: 500px;
+    background-image: url(deluxe.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+/* Room info */
+.info h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Price styling */
+.price {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+}
+
+.price svg {
+    margin-right: 1px;
+}
+
+/* Confirm button styling */
+.book {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.book-b {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 10px;
+    
+}
+
+.book-b:hover {
+    background-color: #10bdd4;
+}
+.a1:hover
+{
+    color: rgb(169, 169, 169);
+}
