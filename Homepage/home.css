@@ -1,0 +1,343 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.237);
+    align-items: center;
+}
+
+.nav-right
+{
+    display: flex;
+    gap: 15px; /* Adjust space between items */
+  
+}
+.nav-right
+{
+  display: flex;
+  gap: 7px; /* Adjust space between items */
+}
+
+header
+{
+        background: url('Mountains.jpg') center/cover no-repeat;
+}
+header nav ul li {
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li .nav-left img
+{
+    border-radius: 50%;
+}
+
+.search {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+  }
+  
+  .mainbox {
+    box-sizing: border-box;
+    position: relative;
+    width: 230px;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 160px;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+  }
+  
+  .checkbox:focus {
+    border: none;
+    outline: none;
+  }
+  
+  .checkbox:checked {
+    right: 10px;
+  }
+  
+  .checkbox:checked ~ .mainbox {
+    width: 50px;
+  }
+  
+  .checkbox:checked ~ .mainbox .search_input {
+    width: 0;
+    height: 0px;
+  }
+  
+  .checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+  }
+  
+  .checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none;
+  }
+  
+  .search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .search_input::placeholder {
+    color: rgba(255, 255, 255, 0.776);
+  }
+  
+  .iconContainer {
+    box-sizing: border-box;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+  
+  .search_icon {
+    box-sizing: border-box;
+    fill: white;
+    font-size: 1.3em;
+  }
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.explore, .journal {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.explore h2, .journal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.explore p, .journal p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.explore-cards, .journal-articles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+article {
+    background: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+.card
+{
+    background: #333333;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.card img, article img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.article-content h3
+{
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.card-content p, .article-content p {
+    font-size: 0.9rem;
+}
+
+.see-more, .all-posts {
+    color: #3a9ff1;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* From Uiverse.io by G4b413l */ 
+.card1 {
+  position: relative;
+  width: 11.875em;
+  height: 16.5em;
+  box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 120ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 0.5em;
+  padding-bottom: 3.4em;
+}
+
+.card1::after {
+  content: "VISIT";
+  padding-top: 1.25em;
+  padding-left: 1.25em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: #0af4b2;
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.card1 .name {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.9em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #000;
+}
+
+.card1:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.text {
+  max-width: 55px;
+}
+
+.image1 {
+
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(northeast-india.webp);
+  background-size: cover;
+}
+.image2 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(kashmir.webp);
+  background-size: cover;
+}
+.image3 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(raju.jpg);
+  background-size: cover;
+}
+.image4 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(lakshadweep.webp);
+  background-size: cover;
+}
+.image5 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(kutch.webp);
+  background-size: cover;
+}
