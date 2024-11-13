@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .paypal-container {
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    .paypal-logo {
+      margin-top: 1em;
+      margin-bottom: 1.5em;
+    }
+    .summary {
+      margin: 1.5em 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+    }
+    .paypal-button {
+      background-color: #0070ba;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .paypal-button:hover {
+      background-color: #005c97;
+    }
+  </style>
+</head>
+<body>
+
+<div class="paypal-container">
+  <h2>Pay with PayPal</h2>
+  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal Logo" class="paypal-logo">
+
+  <p>Log in to your PayPal account to complete the payment.</p>
+
+  <div class="summary">
+    <p><span>Subtotal:</span> <span>1000.00Rs.</span></p>
+    <p><span>Tax:</span> <span>80.00Rs</span></p>
+    <p><strong>Total:</strong> <strong>1080.00Rs.</strong></p>
+  </div>
+
+  <button type="button" class="paypal-button" onclick="window.location.href='Success.html'">Confirm Payment</button>
+
+    Pay with PayPal
+  </button>
+</a>
+</div>
+</body>
+</html>
