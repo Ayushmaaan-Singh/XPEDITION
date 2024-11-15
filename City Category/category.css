@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+ nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: rgba(176, 172, 172, 0.237);
+    align-items: center;
+}
+
+.nav-right
+{
+    display: flex;
+    gap: 15px; /* Adjust space between items */
+  
+}
+.nav-right
+{
+  display: flex;
+  gap: 7px; /* Adjust space between items */
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+
+nav
+{
+        background-color: rgb(57, 57, 57,0.1);
+}
+ nav ul li {
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li .nav-left img
+{
+    border-radius: 50%;
+}
+
+.search {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+  }
+  
+  .mainbox {
+    box-sizing: border-box;
+    position: relative;
+    width: 230px;
+    height: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 160px;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+  }
+  
+  .checkbox:focus {
+    border: none;
+    outline: none;
+  }
+  
+  .checkbox:checked {
+    right: 10px;
+  }
+  
+  .checkbox:checked ~ .mainbox {
+    width: 50px;
+  }
+  
+  .checkbox:checked ~ .mainbox .search_input {
+    width: 0;
+    height: 0px;
+  }
+  
+  .checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+  }
+  
+  .checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none;
+  }
+  
+  .search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .search_input::placeholder {
+    color: rgba(255, 255, 255, 0.776);
+  }
+  
+  .iconContainer {
+    box-sizing: border-box;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+  
+  .search_icon {
+    box-sizing: border-box;
+    fill: white;
+    font-size: 1.3em;
+  }
+
+ nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Keyframes for Fading Effect */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Applying the fade effect */
+.slider .slide:nth-child(1) {
+    animation: fade 15s infinite;
+    animation-delay: 0s;
+}
+
+.slider .slide:nth-child(2) {
+    animation: fade 15s infinite;
+    animation-delay: 5s; /* Delay second image for 5s */
+}
+
+.slider .slide:nth-child(3) {
+    animation: fade 15s infinite;
+    animation-delay: 10s; /* Delay third image for 10s */
+}
+
+
+/* Cities Section */
+.cities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.city {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.city:hover{
+    color: rgb(11, 236, 139);
+}
+
+.city button {
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.city button:hover {
+    background-color: rgb(0, 219, 124,0.7);
+    color: black;
+}
+
+.city:hover {
+    transform: scale(1.2);
+}
+
+/* Keyframes */
+/*@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}*/
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 219, 124);
+}
+
+/* Neon Text Effect */
+.heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    position: relative;
+    animation: flicker 1.5s infinite alternate; /* Flicker effect */
+}
+
+/* Neon Glow */
+.heading::before,
+.heading::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #00ff00; /* Neon green color */
+    background: black;
+    padding: 2px;
+    z-index: -1;
+    filter: blur(8px);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Neon Text Glowing Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #00ff91, 0 0 10px #00ff91, 0 0 15px #00ff91, 0 0 20px #00ff91;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 5px #00ff91, 0 0 10px #00ff91, 0 0 15px #00ff91, 0 0 20px #00ff91;
+    }
+}
+
+/* Flickering Animation */
+@keyframes flicker {
+    0% {
+        opacity: 2;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    40% {
+        opacity: 2;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 2;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
