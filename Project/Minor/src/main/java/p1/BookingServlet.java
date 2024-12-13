@@ -11,11 +11,12 @@ import com.google.gson.Gson; // Import Gson library
 @WebServlet("/bookings")
 public class BookingServlet extends HttpServlet {
 
-    // Database credentials (replace with your credentials)
+    // Database credentials
     private static final String DB_URL = "jdbc:mysql://localhost:3306/minor";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "Avilash2";
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Fetch booking details from the database
         List<Booking> bookings = fetchBookingsFromDatabase();
@@ -34,16 +35,35 @@ public class BookingServlet extends HttpServlet {
         out.flush();
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String bookingIdParam = request.getParameter("id");
+
+        if (bookingIdParam != null) {
+            try {
+                int bookingId = Integer.parseInt(bookingIdParam);
+                boolean deleted = deleteBookingFromDatabase(bookingId);
+
+                if (deleted) {
+                    response.setStatus(HttpServletResponse.SC_OK);
+                } else {
+                    response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                }
+            } catch (NumberFormatException e) {
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            }
+        } else {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+
     private List<Booking> fetchBookingsFromDatabase() {
         List<Booking> bookings = new ArrayList<>();
-        
-        try {
-            // Establish database connection
-            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM bookings");
 
-            // Fetch each booking's data from result set
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery("SELECT * FROM bookings")) {
+
             while (resultSet.next()) {
                 Booking booking = new Booking();
                 booking.setId(resultSet.getInt("id"));
@@ -54,15 +74,25 @@ public class BookingServlet extends HttpServlet {
 
                 bookings.add(booking);
             }
-            
-            // Clean up resources
-            resultSet.close();
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
         return bookings;
+    }
+
+    private boolean deleteBookingFromDatabase(int bookingId) {
+        String deleteQuery = "DELETE FROM bookings WHERE id = ?";
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+
+            preparedStatement.setInt(1, bookingId);
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
