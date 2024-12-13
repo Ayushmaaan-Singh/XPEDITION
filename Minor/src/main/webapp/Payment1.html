@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .payment-details-container {
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      font-size: 0.9em;
+      margin-top: 1em;
+      display: block;
+      color: #555;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .summary {
+      margin: 1.5em 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+    }
+    .confirm-button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 1em;
+      cursor: pointer;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .confirm-button.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .confirm-button:hover {
+      background-color: #45a049;
+    }
+    .expiry-date-display {
+      margin-top: 1em;
+      font-size: 1.1em;
+      color: #555;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      const form = document.forms['paymentForm'];
+      const cardNumber = form['card-number'].value;
+      const expiryDate = form['expiry-date'].value;  // Get the month/year in YYYY-MM format
+      const cvv = form['cvv'].value;
+      const cardHolderName = form['card-holder-name'].value;
+      
+      const allFieldsFilled = cardNumber && expiryDate && cvv && cardHolderName;
+      
+      const confirmButton = document.querySelector('.confirm-button');
+      if (allFieldsFilled) {
+        confirmButton.classList.add('active');
+      } else {
+        confirmButton.classList.remove('active');
+      }
+    }
+    
+    function updateExpiryDateDisplay() {
+      const form = document.forms['paymentForm'];
+      const expiryDate = form['expiry-date'].value; // Get the month/year in YYYY-MM format
+      
+      if (expiryDate) {
+        const [year, month] = expiryDate.split('-'); // Extract year and month from YYYY-MM format
+        const formattedMonth = month; // Numerical month (01-12)
+        const formattedYear = year.slice(2); // Last 2 digits of the year (e.g., 2024 -> 24)
+        
+        // Update the expiry date display (MM/YY format)
+        const expiryDisplay = document.getElementById('expiry-date-display');
+        expiryDisplay.textContent = `Selected Expiry Date: ${formattedMonth}/${formattedYear}`;
+      }
+    }
+    
+    function submitForm() {
+      const form = document.forms['paymentForm'];
+      if (form.checkValidity()) {
+        const expiryDate = form['expiry-date'].value;
+        const [year, month] = expiryDate.split('-'); // Extract year and month from YYYY-MM format
+        alert(`Expiry Date: ${month}/${year.slice(2)}`); // Display MM/YY format
+        window.location.href = 'Success.html';
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="payment-details-container">
+  <h2>Enter Payment Details</h2>
+  <form name="paymentForm" oninput="validateForm()">
+    <label for="card-number">Card Number</label>
+    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" pattern="\d{16}" title="Card number must be 16 digits" required>
+
+    <label for="expiry-date">Expiry Date</label>
+    <input type="month" id="expiry-date" name="expiry-date" required onchange="updateExpiryDateDisplay()">
+
+    <div id="expiry-date-display" class="expiry-date-display">Selected Expiry Date: </div>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3}" title="CVV must be 3 digits" required>
+
+    <label for="card-holder-name">Cardholder Name</label>
+    <input type="text" id="card-holder-name" name="card-holder-name" placeholder="John Doe" required>
+
+    <div class="summary">
+      <p><span>Subtotal:</span> <span>$100.00</span></p>
+      <p><span>Tax:</span> <span>$8.00</span></p>
+      <p><strong>Total:</strong> <strong>$108.00</strong></p>
+    </div>
+
+    <button type="button" class="confirm-button" onclick="submitForm()">Confirm Payment</button>
+  </form>
+</div>
+
+</body>
+</html>
