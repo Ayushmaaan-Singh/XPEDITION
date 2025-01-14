@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        .add-row {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 >Custom Booking Details</h1>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>From-date</th>
+                    <th>To-date</th>
+                    <th>Quantity</th>
+                    <th>City Name</th>
+                    <th>Hotel ID</th>
+                    <th>Room Name</th>
+                    <th>Price per Night</th>
+                    <th>Total Price</th>
+                    <th>Pass</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Pre-fill 15 rows -->
+                <script>
+                    for (let i = 1; i <= 15; i++) {
+                        document.write(`<tr>
+                            <td>${i}</td>
+                            <td>Name ${i}</td>
+                            <td>name${i}@example.com</td>
+                            <td>2025-01-${i}</td>
+                            <td>2025-01-${i + 1}</td>
+                            <td>${i * 2}</td>
+                            <td>City ${i}</td>
+                            <td>H${i}</td>
+                            <td>Room ${i}</td>
+                            <td>$${i * 10}</td>
+                            <td>$${i * 10 * 2}</td>
+                            <td>Pass ${i}</td>
+                            <td><button onclick="deleteRow(this)">Delete</button></td>
+                            <td><button onclick="updateRow(this)">Update</button></td>
+                        </tr>`);
+                    }
+                </script>
+            </tbody>
+        </table>
+
+        <button class="add-row" onclick="addRow()">Add More Row</button>
+    </div>
+
+    <script>
+        function deleteRow(button) {
+            const row = button.closest("tr");
+            row.remove();
+        }
+
+        function updateRow(button) {
+            const row = button.closest("tr");
+            const cells = row.querySelectorAll("td");
+            cells.forEach((cell, index) => {
+                if (index !== cells.length - 2 && index !== cells.length - 1) {
+                    const newValue = prompt(`Update value for ${cell.textContent}:`, cell.textContent);
+                    if (newValue) cell.textContent = newValue;
+                }
+            });
+        }
+
+        function addRow() {
+            const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+            const newRow = table.insertRow();
+
+            const cellsContent = [
+                "New Booking ID", 
+                "New Name", 
+                "New E-mail", 
+                "New From-date", 
+                "New To-date", 
+                "New Quantity", 
+                "New City Name", 
+                "New Hotel ID", 
+                "New Room Name", 
+                "$0", 
+                "$0", 
+                "New Pass", 
+                '<button onclick="deleteRow(this)">Delete</button>',
+                '<button onclick="updateRow(this)">Update</button>'
+            ];
+
+            cellsContent.forEach(content => {
+                const newCell = newRow.insertCell();
+                newCell.innerHTML = content;
+            });
+        }
+    </script>
+</body>
+</html>

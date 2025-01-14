@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #171616;
+            color: white;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            color: #01d27b;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .admin-info {
+            margin-bottom: 30px;
+        }
+
+        .sidebar .admin-info p {
+            margin: 5px 0;
+            height: 20vh;
+        }
+
+        .sidebar .admin-actions p {
+            margin: 10px 0;
+        }
+
+        .dashboard {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .card {
+            width: 200px;
+            height: 120px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .static-pages { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .slider { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .team { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .services { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .portfolio { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .users { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+        .enquiries { background-image: linear-gradient(rgb(1, 210, 123), rgb(52, 149, 107), #171616); }
+
+        .heading {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 36px;
+            color: white;
+            background-color: #171616;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <div class="admin-info">
+            <p><strong>Name:</strong> Admin User</p>
+            <p><strong>Email:</strong> admin@example.com</p>
+            <p><strong>Role:</strong> Super Admin</p>
+        </div>
+        <div class="admin-actions">
+            <p><a href="#" style="color: #01d27b; text-decoration: none;">Profile Settings</a></p>
+            <p><a href="#" style="color: #01d27b; text-decoration: none;">Logout</a></p>
+        </div>
+    </div>
+
+    <div class="main-content" style="flex-grow: 1; display: flex; flex-direction: column;">
+        <div class="heading">Dashboard</div>
+        <div class="dashboard">
+            <div class="card static-pages" onclick="navigateTo('user.html')">User Informations</div>
+            <div class="card slider" onclick="navigateTo('popupack.html')">Popular Packages</div>
+            <div class="card team" onclick="navigateTo('citydetails.html')">City Pages</div>
+            <div class="card services" onclick="navigateTo('hotdetails.html')">Hotels</div>
+            <div class="card portfolio" onclick="navigateTo('roomdetails.html')">Rooms</div>
+            <div class="card users" onclick="navigateTo('pack.html')">Package Bookings</div>
+            <div class="card enquiries" onclick="navigateTo('custom.html')">Custom Bookings</div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
